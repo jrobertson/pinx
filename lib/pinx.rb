@@ -38,9 +38,17 @@ class PinX
     @on_thread.exit if @on_thread
     @off_thread = Thread.new { (sleep duration; on()) } if duration
 
-  end  
+  end    
+  
+  alias high on # opposite of low
+  alias open on # opposite of close
+  alias lock on # opposite of unlock
   
   alias stop off        
+  alias low off
+  alias close off
+  alias unlock off
+  
 
   def blink(seconds=0.5, duration: nil)
 
@@ -68,6 +76,8 @@ class PinX
     end
   end
   
+  alias oscillate blink
+  
   def on?()  @on  end
   def off?() !@on end
   
@@ -77,6 +87,8 @@ class PinX
   
   protected
   
+  # set val with 0 (off) or 1 (on)
+  #    
   def set_pin(val)
     @on  = val
   end
