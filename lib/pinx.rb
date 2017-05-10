@@ -17,7 +17,10 @@ class PinX
     @on, @blinking = false, false
   end
 
-
+  def blinking?()
+    @blinking
+  end
+  
   def on(durationx=nil, duration: nil)
     
     set_pin HIGH
@@ -40,6 +43,7 @@ class PinX
 
   end    
   
+  alias start on
   alias high on # opposite of low
   alias open on # opposite of close
   alias lock on # opposite of unlock
@@ -52,6 +56,8 @@ class PinX
 
   def blink(seconds=0.5, duration: nil)
 
+    self.stop if blinking?
+    
     @blinking = true
     t2 = Time.now + duration if duration
 
