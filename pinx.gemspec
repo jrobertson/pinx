@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'pinx'
-  s.version = '0.1.2'
+  s.version = '0.1.3'
   s.summary = 'A base class for setting a digital pin to on, off, or blink, or on, off, or blinkg for a fixed duration.'
   s.authors = ['James Robertson']
   s.files = Dir['lib/pinx.rb']

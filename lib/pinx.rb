@@ -9,6 +9,13 @@ class PinX
   
   HIGH = true
   LOW = false
+  
+  class Void
+    def on(duration=nil)               end
+    def off()                          end
+    def blink(seconds=0, duration=nil) end
+    alias stop off
+  end    
 
   attr_reader :id
 
